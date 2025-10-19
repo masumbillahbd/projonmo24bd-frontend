@@ -17,11 +17,6 @@ const HomePageSecondSection = () => {
   const [economy, setEconomy] = useState(null);
   const [economySix, setEconomySix] = useState([]);
 
-  const [internationalCategory, setInternationalCategory] = useState(null);
-  const [internationalOne, setInternationalOne] = useState(null);
-  const [internationalTwoFirst, setInternationalTwoFirst] = useState([]);
-  const [internationalTwoSecond, setInternationalTwoSecond] = useState([]);
-
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -41,11 +36,6 @@ const HomePageSecondSection = () => {
 
                     setEconomy(response.data.economy || null);
                     setEconomySix(response.data.economySix || []);
-
-                    setInternationalCategory(response.data.international || null);
-                    setInternationalOne(response.data.internationalOne || null);
-                    setInternationalTwoFirst(response.data.internationalTwoFirst || []);
-                    setInternationalTwoSecond(response.data.internationalTwoSecond || []);
                     
                     setError(null);
                 }
