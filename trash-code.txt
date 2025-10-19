@@ -1,0 +1,178 @@
+
+            <h2>People List</h2>
+            {people.map((person, index) => (
+                <div key={person.id} className="col-md-4 mb-4">
+                    <div className="card h-100">
+                        <div className="card-body">
+                            <h4 className="card-title">{index + 1}. {person.name}</h4>
+                            <p className="card-text">{person.intro}</p>
+                        </div>
+                    </div>
+                </div>
+            ))}
+
+
+
+    // scroll-down then function call
+    const handleScroll = () => {
+        const scrollTop = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const fullHeight = document.documentElement.scrollHeight;
+
+        // If scrolled to within 100px of the bottom, trigger something
+        if (scrollTop + windowHeight >= fullHeight - 100) {
+            console.log('Scrolled near bottom! Calling function...');
+            myFunctionOnScroll();
+        }
+    };
+
+    const myFunctionOnScroll = () => {
+        // Your logic here, like fetching more posts
+        console.log('Function triggered on scroll!');
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up on unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
+
+
+            <h2>Scroll down the page to trigger function</h2>
+            {/* Simulated long content */}
+            <div style={{ height: '2000px', background: '#f1f1f1' }}></div>
+            
+
+
+===app.jsx==code======
+
+      <UseRef/>
+      <UseStateComp/>
+      <UseEffectPractice/>
+      {
+        marks >= 33 ? <h1>You are Pass</h1> : <h1>You are fail</h1>
+      }
+
+      {/* immediately invoked function */} 
+      {
+        (()=>{
+
+          if(marks >= 80 && marks<=100){
+            return <h1>A+</h1>
+          }else if(marks >= 70 && marks<80){
+            return <h1>A</h1>
+          }else if(marks >= 60 && marks<70){
+            return <h1>A-</h1>
+          }else if(marks >= 50 && marks<60){
+            return <h1>B</h1>
+          }else if(marks >= 40 && marks<60){
+            return <h1>C</h1>
+          }else if(marks >= 33 && marks<40){
+            return <h1>D</h1>
+          }else{
+            return <h1>F</h1>
+          }
+
+
+        })()
+      }
+
+      <ol>
+        {
+          cites.map((item,i)=>{
+            return <li key={i.toString()}>{item}</li>
+          })
+        }
+      </ol>
+
+      {loginStatus ? <h2>Logout</h2> : <h2>Login</h2>}
+        
+    {/*React Events*/}
+      {/*array function */}
+    <button onClick={()=>{
+      alert("Say Event")
+    }}>Click Me 1</button>
+
+    <button onClick={demo2}>Click Me 2</button>
+
+    {/*direct function */}
+    <button onClick={function demo(){
+      alert(" Event direct function")
+    }}>Click Me 3</button>
+
+
+    <h1>Login Status</h1>
+      <LoginStatus/>
+      <Header/>
+      <Hero title="learn react props" car={carInfo} fruits={fruitsItems} BtnClick={BtnClick}/>
+      <ContactForm/>
+      
+      ===end=app.jsx=code===
+
+
+
+
+
+
+
+
+
+
+      ==========post component============
+      import React, { useEffect, useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { Link } from 'react-router-dom';
+
+import axios from 'axios';
+
+const Post = () => {
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        axios.get('https://newsflash71.com/api/posts/150')
+            .then(response => {
+                setPosts(response.data.data); // assuming API returns { data: [...] }
+            })
+            .catch(error => {
+                console.error('Error fetching posts:', error);
+            });
+    }, []);
+
+
+    return (
+        <div className='row'>
+            <h2>Post List</h2>
+            {posts.map((post, index) => (
+                <div key={post.id} className="col-md-4 mb-4">
+                    <div className="card h-100">
+                        
+                            <LazyLoadImage
+                                className="card-img-top"
+                                src={post.featured_image}
+                                alt="{post.headline}"
+                                effect="blur"
+                                placeholderSrc="/placeholder.jpg" // Optional
+                            />
+                        
+                        <div className="card-body">
+                            <h4 className="card-title">{index + 1}. {post.headline}</h4>
+                            <p className="card-text">
+                                {post.excerpt.length > 100
+                                    ? post.excerpt.slice(0, 100) + '...'
+                                    : post.excerpt}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default Post;
+

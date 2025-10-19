@@ -1,0 +1,30 @@
+/* Simple shimmer skeleton */
+.skeleton {
+  border-radius: 8px;
+  background: linear-gradient(90deg, #e9e9e9 25%, #f5f5f5 37%, #e9e9e9 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+/* placeholder block size */
+.skeleton-block {
+  width: 100%;
+  height: 100%;
+  min-height: 220px; /* fallback; overridden by inline minHeight */
+}
+
+/* Fade-in for loaded content */
+.loaded-section {
+  animation: fadeInUp 420ms ease both;
+}
+
+/* Keyframes */
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

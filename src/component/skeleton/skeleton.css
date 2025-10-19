@@ -1,0 +1,169 @@
+.news-card .img {
+  height: 136px;
+}
+.ITH .img {
+  height: 90px;
+}
+.ITTH .img {
+  height: 90px;
+}
+
+@media (min-width: 300px) {
+  .ITH .img {
+    height: 125px;
+  }
+  .TTH .img {
+    height: 90px;
+  }
+  .ITTH .img {
+    height: 90px;
+  }
+  .news-card .img {
+      height: 165px;
+  }
+}
+@media (min-width: 350px) {
+  .ITH .img {
+    height: 125px;
+  }
+  .ITTH .img {
+    height: 90px;
+  }
+    .news-card .img {
+        height: 200px;
+    }
+}
+@media (min-width: 400px) {
+  .ITH .img {
+    height: 125px;
+  }
+  .ITTH .img {
+    height: 90px;
+  }
+    .news-card .img {
+        height: 215px;
+    }
+}
+@media (min-width: 450px) {
+  .ITH .img {
+    height: 125px;
+  }
+  .ITTH .img {
+    height: 90px;
+  }
+    .news-card .img {
+        height: 250px;
+    }
+}
+@media (min-width: 500px) {
+  .ITH .img {
+    height: 120px;
+  }
+  .ITTH .img {
+    height: 90px;
+  }
+    .news-card .img {
+        height: 250px;
+    }
+}
+@media (min-width: 550px) {
+  .ITH .img {
+    height: 120px;
+  }
+  .ITTH .img {
+    height: 90px;
+  }
+    .news-card .img {
+        height: 290px;
+    }
+}
+
+@media (min-width: 600px) {
+  .ITH .img {
+    height: 120px;
+  }
+  .TTH .img {
+    height: 90px;
+  }
+  .ITTH .img {
+    height: 90px;
+  }
+  .news-card .img {
+    height: 290px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ITV .img{
+    height: 140px;
+  }
+  .ITH .img {
+    height: 100px;
+  }
+  .ITTH .img {
+    height: 90px;
+  }
+  .news-card .img {
+    height: 97px;
+  }
+}
+
+@media (min-width: 992px) {
+  .ITV .img{
+    height: 175px;
+  }
+  .ITH .img {
+    height: 100%;
+  }
+  .ITTH .img {
+    height: 90px;
+  }
+  .news-card .img {
+    height: 131px;
+  }
+}
+@media (min-width: 1100px) {
+  .ITV .img{
+    height: 175px;
+  }
+  .ITH .img {
+    height: 100%;
+  }
+  .ITTH .img {
+    height: 90px;
+  }
+  .news-card .img {
+    height: 150px;
+  }
+}
+@media (min-width: 1150px) {
+  .ITTH .img {
+    height: 90px;
+  }
+  .news-card .img {
+    height: 131px;
+  }
+}
+@media (min-width: 1200px) {
+  .ITV .img{
+    height: 175px;
+  }
+  .ITH .img {
+    height: 100%;
+  }
+  .ITTH .img {
+    height: 90px;
+  }
+  .news-card .img {
+    height: 156px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .ITTH .img {
+    height: 90px;
+  }
+  .news-card .img {
+    height: 181px;
+  }
+}
